@@ -9,8 +9,20 @@ browser = """
     google-chrome \
     --user-data-dir="$HOME/.google-chrome-captive" \
     --proxy-server="socks5://$PROXY" \
-    --host-resolver-rules="MAP * ~NOTFOUND , EXCLUDE localhost" \
-    --no-first-run --new-window --incognito \
+    --proxy-bypass-list="<-loopback>" \
+    --no-first-run \
+    --new-window \
+    --incognito \
+    --no-default-browser-check \
+    --no-crash-upload \
+    --disable-extensions \
+    --disable-sync \
+    --disable-background-networking \
+    --disable-client-side-phishing-detection \
+    --disable-component-update \
+    --disable-translate \
+    --disable-web-resources \
+    --safebrowsing-disable-auto-update \
     http://example.com
 """
 

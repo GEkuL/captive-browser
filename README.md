@@ -24,23 +24,31 @@ cp $(go env GOPATH)/src/github.com/FiloSottile/captive-browser/captive-browser-m
 
 To disable the insecure system captive browser [see here](https://github.com/drduh/macOS-Security-and-Privacy-Guide#captive-portal). If that doesn't work, disable SIP (remember to re-enable it), and rename `/System/Library/CoreServices/Captive Network Assistant.app`.
 
-### Ubuntu
+### Linux
+
+#### Ubuntu
 
 ```
 cp $(go env GOPATH)/src/github.com/FiloSottile/captive-browser/captive-browser-ubuntu-chrome.toml ~/.config/captive-browser.toml
 ```
 
-### Arch / systemd-networkd
+#### Arch / systemd-networkd
 
 ```
 go get -u github.com/FiloSottile/captive-browser/cmd/systemd-networkd-dns
 cp $(go env GOPATH)/src/github.com/FiloSottile/captive-browser/captive-browser-arch-chrome.toml ~/.config/captive-browser.toml
 ```
 
-### Arch / dhcpcd
+#### Arch / dhcpcd
 
 ```
 cp $(go env GOPATH)/src/github.com/FiloSottile/captive-browser/captive-browser-dhcpcd-chromium.toml ~/.config/captive-browser.toml
+```
+
+#### Flatpak
+
+```
+cp $(go env GOPATH)/src/github.com/FiloSottile/captive-browser/captive-browser-flatpak-chromium.toml ~/.config/captive-browser.toml
 ```
 
 ## Usage

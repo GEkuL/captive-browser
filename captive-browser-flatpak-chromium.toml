@@ -6,8 +6,8 @@
 # it maintains no state across runs. To configure this browser open a
 # normal window in it, settings will be preserved.
 browser = """
-    chromium \
-    --user-data-dir="$HOME/.chromium-captive" \
+    flatpak run org.chromium.Chromium \
+    --user-data-dir="$HOME/.google-chrome-captive" \
     --proxy-server="socks5://$PROXY" \
     --proxy-bypass-list="<-loopback>" \
     --no-first-run \
@@ -30,9 +30,9 @@ browser = """
 # DNS server address. The first match of an IPv4 regex is used.
 # IPv4 only, because let's be real, it's a captive portal.
 #
-# `wlan0` is your network interface.
+# `wlp3s0` is your network interface (eth0, wlan0 ...)
 #
-dhcp-dns = "dhcpcd -U wlan0 | grep domain_name_servers"
+dhcp-dns = "nmcli dev show | grep IP4.DNS"
 
 # socks5-addr is the listen address for the SOCKS5 proxy server.
 socks5-addr = "localhost:1666"
